@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import Image from 'next/image';
 import OrderItem from '@components/OrderItem';
 import AppContext from '@context/AppContext';
 import arrow from '@icons/flechita.svg';
@@ -15,10 +16,10 @@ const MyOrder = () => {
 
 	return (
 		<aside className={styles.MyOrder}>
-			<div className="MyOrder-container">
-				<div className="title-container">
-					<img className="more-clickable-area pointer" src={arrow} alt="arrow" onClick={() => toggleOrder()} />
-					<p className="title">My order</p>
+			<div className={styles["MyOrder-container"]}>
+				<div className={styles["title-container"]}>
+					<Image className={styles["more-clickable-area pointer"]} src={arrow} alt="arrow" onClick={() => toggleOrder()} />
+					<p className={styles.title}>My order</p>
 				</div>
 				<div className="my-order-content">
 					<div className="my-orders">
@@ -26,13 +27,13 @@ const MyOrder = () => {
 							<OrderItem product={product} key={`orderItem-${product.id}`} />
 						))}
 					</div>
-					<div className="order">
+					<div className={styles.order}>
 						<p>
 							<span>Total</span>
 						</p>
 						<p>${sumTotal()}</p>
 					</div>
-					<button className="primary-button">
+					<button className={styles["primary-button"]}>
 						Checkout
 					</button>
 				</div>
