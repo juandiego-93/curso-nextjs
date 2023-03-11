@@ -22,7 +22,7 @@ const ProductItem = ({ product }) => {
 					<p>{product?.title}</p>
 				</div>
 				<figure className={styles["more-clickable-area"]} onClick={() => handleClick(product)} >
-					{  state.cart.includes(product) ? <Image className={styles["disabled add-to-cart-btn"]} src={addedToCartImage} alt="added to cart" />  : <Image className={styles["add-to-cart-btn pointer"]} src={addToCartImage} alt="add to cart" /> }
+					{  state.cart.includes(product) ? <Image className={styles["disabled add-to-cart-btn"]} src={addedToCartImage} width={50} height={50} alt="added to cart" />  : <Image className={styles["add-to-cart-btn pointer"]} src={addToCartImage} alt="add to cart" /> }
 					
 				</figure>
 			</div>
