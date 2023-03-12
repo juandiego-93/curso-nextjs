@@ -10,24 +10,27 @@ const ProductItem = ({ product }) => {
 
 	const handleClick = item => {
 		console.log('in cart: ', state.cart.includes(item));
-		addToCart(item)
-	}
+		addToCart(item);
+	};
 
 	return (
 		<div className={styles.ProductItem}>
-			<img src={product?.images[0]} alt={product?.title} />
+			<Image src={product?.images[0]} alt={product?.title} width={240} height={240} />
 			<div className={styles["product-info"]}>
 				<div>
 					<p>${product?.price}</p>
 					<p>{product?.title}</p>
 				</div>
-				<figure className={styles["more-clickable-area"]} onClick={() => handleClick(product)} >
-					{  state.cart.includes(product) ? <Image className={styles["disabled add-to-cart-btn"]} src={addedToCartImage} width={50} height={50} alt="added to cart" />  : <Image className={styles["add-to-cart-btn pointer"]} src={addToCartImage} alt="add to cart" /> }
+				<figure role='presentation'className={styles["more-clickable-area"]} onClick={() => handleClick(product)} >
+					{state.cart.includes(product) ? 
+					<Image className={styles["disabled add-to-cart-btn"]} src={addedToCartImage}
+					width={50} height={50} alt="added to cart" />  : <Image className={styles["add-to-cart-btn pointer"]}
+					src={addToCartImage} alt="add to cart" /> }
 					
 				</figure>
 			</div>
 		</div>
 	);
-}
+};
 
 export default ProductItem;
